@@ -1,0 +1,17 @@
+#!fsharp
+
+// Get packages
+#r "nuget: System.Data.SQLite"
+#r "nuget: Plotly.NET, 2.0.0-preview.18"
+#r "nuget: Plotly.NET.Interactive, 2.0.0-preview.18"
+
+#!fsharp
+
+open Plotly.NET
+
+let xData = [0. .. 0.001 .. 10.]
+let yData = seq { for x in xData do System.Math.Sin(x) }
+
+let myFirstChart = Chart.Line (xData, yData)
+
+myFirstChart
